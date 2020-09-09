@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.error {
+    padding-top: 5px;
+    color: red;
+    font-style: italic;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    min-height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+main form label {
+    margin: 10px 0px 5px 0px;
+}
+
+input {
+    height: 25px;
+    width: 200px;
+    padding: 5px;
+}
+
+button:focus {
+    outline: none;
+}
+
+nav button {
+    border: 0px;
+    background-color: transparent;
+    font-size: 20px;
+    transition: color 0.2s ease;
+}
+
+main button {
+    margin-top: 50px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s ease;
+    align-self: center;
+}
+
+main button:hover {
+    transform: scale(1.1);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#subnetInputTable {
+    margin-top: 50px;
+}
+
+#subnetInputTable input {
+    border: 0px;
+}
+
+#subnetInputTable input:focus {
+    outline: none;
+}
+
+#subnetResultTable {
+    margin-top: 50px;
+}
+
+#subnetResultTable td {
+    min-height: 25px;
+    padding: 5px;
+}
+
+#subnetResultTableInfo {
+    display: none;
+    margin-top: 20px;
+}
+
+#subnetResultTableInfo {
+    opacity: 0.8;
+}
+
+#subnetResultTableInfo td {
+    border: 0px;
+    padding: 5px;
+}
+
+#subnetResultTableInfo tr td:first-child {
+    font-weight: bold;
+}
+
+#about span {
+    display: block;
+    padding-top: 10px;
+}
+
+#about article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 50%;
+}
+
+#about #warning {
+    color: red;
+}
+
+#about #email {
+    font-size: 40px;
+    color: #007fff;
+}
+
+@media (max-width: 720px)  {
+
+
+    /* nav {
+        flex-direction: column;
+        width: 100%;
+    } 
+
+    nav ul {
+        width: 50%;
+        padding: 10px 0px;
+    } */
+
+    #subnetResultTable {
+        width: 90%;
+    }
+
+    #subnetResultTable tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        margin-bottom: 20px;
+    }
+
+    #subnetResultTable tr:first-child {
+        display: none;
+    }
+
+    #subnetResultTable td {
+        border: 0px;
+    }
+    
+    #subnetResultTable td::before {
+        font-weight: bold;
+    }
+
+    #subnetResultTable td:nth-child(1)::before {
+        content: "Subnet: ";
+    }
+
+    #subnetResultTable td:nth-child(2)::before {
+        content: "REQ: ";
+    }
+
+    #subnetResultTable td:nth-child(3)::before {
+        content: "MAX: ";
+    }
+
+    #subnetResultTable td:nth-child(4)::before {
+        content: "Network: ";
+    }
+
+    #subnetResultTable td:nth-child(5)::before {
+        content: "SUFF: ";
+    }
+
+    #subnetResultTable td:nth-child(6)::before {
+        content: "Subnet mask: ";
+    }
+
+    #subnetResultTable td:nth-child(7)::before {
+        content: "First host: ";
+    }
+
+    #subnetResultTable td:nth-child(8)::before {
+        content: "Last host: ";
+    }
+
+    #subnetResultTable td:nth-child(9)::before {
+        content: "Broadcast: ";
+    }
+}
+
+

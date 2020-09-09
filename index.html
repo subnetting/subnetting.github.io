@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Easy to use VLSM calculator for finding subnetwork addresses, network masks, broadcast addresses, number of hosts and usable ranges">
+    <meta name="keywords" content="VLSM, subnetworking, subnetting, subnet, calculator, ip, ipv4">
+    <meta name="author" content="Bruno Hradec, Ivan Luka Špoljar, Antonio Jurešić">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Subnetting</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link id="theme" rel="stylesheet" href="lightTheme.css">
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+
+    <script src="ipv4.js"></script>
+    <script src="https://kit.fontawesome.com/fdf66c768c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">
+                <h1>Subnetting.me</h1>
+            </a>
+            <ul>
+                <!-- <li><a href="index.php">VLSM</a></li>
+                <li><a href="ipv4.html">IPv4</a></li>
+                <li><a href="ipv6.html">IPv6</a></li>
+                <li><a href="about.html">About</a></li> -->
+
+                <li>
+                    <button onclick="changeTheme()">
+                        <i class="far fa-lightbulb"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="vlsm">
+
+        <form id="networkInput">
+            <label for="networkAddressInput">Network address:</label>
+            <input type="text" name="networkAddressInput" id="networkAddressInput" value="192.168.0.1/24">
+            <span id="networkAddressErrorSpan" class="error"></span>
+            <label for="numOfSubnetsInput">Number of subnets:</label>
+            <input type="number" name="numOfSubnetsInput" id="numOfSubnetsInput" value="5"
+                onchange="changeSubnetInputTable();">
+            <span id="numOfSubnetsErrorSpan" class="error"></span>
+        </form>
+
+        <!-- Rest of the table is generated in index.js -->
+        <table id="subnetInputTable">
+            <tr>
+                <th>Subnet name</th>
+                <th>Number of hosts</th>
+            </tr>
+        </table>
+        <span id="subnetInputErrorSpan" class="error"></span>
+
+        <button type="button" onclick="generateSubnetResults()">Calculate</button>
+
+        <!-- Rest of the table is generated in index.js -->
+        <table id="subnetResultTable"></table>
+
+        <span id="subnetResultTableInfo">
+            <table>
+                <tr>
+                    <td>REQ: </td>
+                    <td id="reqDesc">Required number of hosts</td>
+                </tr>
+                <tr>
+                    <td>MAX: </td>
+                    <td id="maxDesc">Maximum available number of hosts</td>
+                </tr>
+                <tr>
+                    <td>SUFF: </td>
+                    <td id="suffDesc">Subnet suffix (CIDR)</td>
+                </tr>
+            </table>
+        </span>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
